@@ -1,0 +1,29 @@
+{
+  "name": "advent-of-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node ./dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dplaton/aoc.git"
+  },
+  "author": "Daniel Platon (dplaton@pm.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dplaton/aoc/issues"
+  },
+  "homepage": "https://github.com/dplaton/aoc#readme",
+  "dependencies": {
+    "typescript": "^5.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.2",
+    "rimraf": "^5.0.5"
+  }
+}
