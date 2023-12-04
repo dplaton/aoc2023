@@ -1,3 +1,3 @@
-import {main} from "./day-01";
+import {main as day01} from "./day-01";
 
-main();
+console.log(`Solution for day one - ${day01()}`);

@@ -19,20 +19,25 @@ function readInput() {
 }
 
 function getNumberFromLine(line: string) {
-    let numberAsString = "";
-    //first, traverse the array to get the numbers.
-    for (let i=0; i < line.length; i++) {
-        if (line.charCodeAt(i) >= 48 && line.charCodeAt(i) <= 57) {
-            numberAsString += line.charAt(i);
+    let numbers = [];
+    let index = 0;
+
+    while (index < line.length) {
+        let skip = 1;
+        if (line.charCodeAt(index) >= 48 && line.charCodeAt(index) <= 57) {
+            numbers.push(line[index]);
         }
         Object.keys(DIGITS).forEach(element => {
-            if (line.indexOf(element) === i) {
-                numberAsString+=DIGITS[element];
+            if (line.indexOf(element) === index) {
+                numbers.push(DIGITS[element]);
+                skip = DIGITS[element].length;
             }
         });
+
+        index += skip;
     }
     
-    const finalNumber = numberAsString.charAt(0) + numberAsString.charAt(numberAsString.length-1);
+    const finalNumber = `${numbers[0]}${numbers[numbers.length-1]}`
     console.log(`Found ${finalNumber} for ${line}`);
     return Number(finalNumber);
 }
