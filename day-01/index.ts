@@ -12,7 +12,7 @@ export class Day01 {
     getNumberFromLine(line: string) {
         let numbers = [];
         let index = 0;
-    
+        console.log(`Parse line ${line}`)
         while (index < line.length) {
             let skip = 1;
             if (line.charCodeAt(index) >= 48 && line.charCodeAt(index) <= 57) {
@@ -21,7 +21,7 @@ export class Day01 {
             Object.keys(DIGITS).forEach(element => {
                 if (line.indexOf(element) === index) {
                     numbers.push(DIGITS[element]);
-                    skip = DIGITS[element].length;
+                    console.log(`Found element ${element}, skipping ${skip}`);
                 }
             });
     

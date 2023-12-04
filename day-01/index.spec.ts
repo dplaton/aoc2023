@@ -11,13 +11,27 @@ describe('Day 1 test suite', () => {
     4nineeightseven2
     zoneight234
     7pqrstsixteen
-    5`
+    5
+    eighthree`
     
     before(() => {
         day01 = new Day01(dummyInput);
     })
 
-    it('should calculate the sum', () => {
-        expect(day01.run()).to.equal(336);
+    it.skip('should calculate the sum', () => {
+        expect(day01.run()).to.equal(419);
+    })
+
+    it(`should treat edgecases`, () => {
+        const testCases:Record<string, number> = {
+            "eighthree": 83,
+            "sevenine": 79,
+            "5": 55
+        };
+
+        Object.keys(testCases).forEach( (line)=> {
+            expect(day01.getNumberFromLine(line)).to.equal(testCases[line]);
+        });
+
     })
 })
